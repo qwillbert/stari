@@ -42,13 +42,15 @@ async function serveUserScript (req) {
 	return new Response(await Bun.file("./dist/index.js").text())
 }
 
-watch("./src", { recursive: true },  buildUserScript)
-
-const app = serve({
-	routes: {
-		"/": serveUserScript,
-		"/:": serveUserScript,
-	}
-})
-
-console.log(`Development server running at ${app.url}`)
+if (process.argv.includes("--watch")) {
+	watch("./src", { recursive: true },  buildUserScript)
+	
+	const app = serve({
+		routes: {
+			"/": serveUserScript,
+			"/:": serveUserScript,
+		}
+	})
+	
+	console.log(`Development server running at ${app.url}`)
+}
