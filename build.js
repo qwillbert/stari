@@ -21,6 +21,7 @@ async function buildUserScript(action, file) {
 			.replace("$NAMESPACE", author.url)
 			.replace("$MATCH", match),
 			sourcemap: "inline",
+			minify: process.argv.includes("--minify"),
 			format: "esm"
 		})
 		
