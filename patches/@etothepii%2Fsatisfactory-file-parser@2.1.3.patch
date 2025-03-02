@@ -1,0 +1,33 @@
+diff --git a/build/parser/stream/reworked/readable-stream-parser.d.ts b/build/parser/stream/reworked/readable-stream-parser.d.ts
+index 184efddef35304e0d1fdbf316580b416f875fb91..86aabc79a40e5709bb380d15f57b6e262b8c57f8 100644
+--- a/build/parser/stream/reworked/readable-stream-parser.d.ts
++++ b/build/parser/stream/reworked/readable-stream-parser.d.ts
+@@ -1,4 +1,4 @@
+-import { ReadableStream } from "stream/web";
++import { ReadableStream } from "web-streams-polyfill";
+ export declare class ReadableStreamParser {
+     private static CreateReadableStreamForParsingSave;
+     static CreateReadableStreamFromSaveToJson: (name: string, bytes: ArrayBuffer, options?: Partial<{
+diff --git a/build/parser/stream/reworked/readable-stream-parser.js b/build/parser/stream/reworked/readable-stream-parser.js
+index 68a217841ae459ee30731b2e7229897273266b59..72f01dacbe24898f3b6e879200a5528d00a98d56 100644
+--- a/build/parser/stream/reworked/readable-stream-parser.js
++++ b/build/parser/stream/reworked/readable-stream-parser.js
+@@ -2,7 +2,7 @@
+ var _a;
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.ReadableStreamParser = void 0;
+-const web_1 = require("stream/web");
++const web_1 = require("web-streams-polyfill");
+ const parser_error_1 = require("../../error/parser.error");
+ const level_class_1 = require("../../satisfactory/save/level.class");
+ const object_references_list_1 = require("../../satisfactory/save/object-references-list");
+diff --git a/build/parser/stream/reworked/save-stream-json-stringifier.d.ts b/build/parser/stream/reworked/save-stream-json-stringifier.d.ts
+index 4b52bbb4b3e6f7cc919c868cb0b779a9bf0b3774..e0fa5a75708841c1ace6a555d9ba65abee966e56 100644
+--- a/build/parser/stream/reworked/save-stream-json-stringifier.d.ts
++++ b/build/parser/stream/reworked/save-stream-json-stringifier.d.ts
+@@ -1,4 +1,4 @@
+-import { WritableStream } from "stream/web";
++import { WritableStream } from "web-streams-polyfill";
+ import { SatisfactorySave } from '../../satisfactory/save/satisfactory-save';
+ export declare class SaveStreamJsonStringifier {
+     static StreamStringifySave(save: SatisfactorySave, output: WritableStream<string>): Promise<void>;

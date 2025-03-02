@@ -1,0 +1,9 @@
+// ==UserScript==
+// @name         $DISPLAYNAME
+// @namespace    $NAMESPACE
+// @version      $VERSION
+// @description  $DESCRIPTION
+// @author       $AUTHOR
+// @match        $MATCH
+// @grant        none
+// ==/UserScript==
