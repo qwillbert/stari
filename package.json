@@ -2,12 +2,15 @@
   "name": "stari",
   "displayName": "SatisfactoryTools Alternate Recipe Importer",
   "description": "Allows you to import your save into satisfactorytools.com to automatically fill in the alternate recipies you have unlocked.",
-  "match": "https://*satisfactorytools.com/1.0/production*",
+  "match": [
+    "https://*satisfactorytools.com/1.0/production*",
+    "https://www.satisfactorytools.com/1.0/production"
+  ],
   "author": {
     "name": "qwillbert",
     "url": "https://github.com/qwillbert"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "module": "index.js",
   "type": "module",
   "devDependencies": {

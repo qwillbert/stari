@@ -19,8 +19,8 @@ async function buildUserScript(action, file) {
 			.replace("$DESCRIPTION", description)
 			.replace("$AUTHOR", author.name)
 			.replace("$NAMESPACE", author.url)
-			.replace("$MATCH", match),
-			sourcemap: "inline",
+			.replace("$MATCHES", match.map(match => `// @match		${match}`).join("\n")),
+			sourcemap: process.argv.includes("--sourcemap") || process.argv.includes("--watch") ? "inline" : "none",
 			minify: process.argv.includes("--minify"),
 			format: "esm"
 		})
